@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR=`dirname $0`
+DIR=`whereis $0 | sed  's/ /\n/g' | grep sh | sed 's/\/Negatron.sh//'` && cd $DIR
 MINIMUMVERSION=11
 JVM_OPTIONS="-Xms512m -Xmx2g --add-exports javafx.controls/com.sun.javafx.scene.control.behavior=negatron --add-opens javafx.controls/javafx.scene.control=negatron --add-opens javafx.controls/javafx.scene.control.skin=negatron --module-path=\"$DIR/modules:$DIR/modules/lnx\""
 
